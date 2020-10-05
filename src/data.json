@@ -1,0 +1,48 @@
+{
+	"chars": [
+		{
+			"id": 1,
+			"text": "Web Apps and Native Apps",
+			"icon": "platform"
+		},
+		{ "id": 2, "text": "Authentication", "icon": "auth" },
+		{ "id": 3, "text": "API", "icon": "api" },
+		{ "id": 4, "text": "SEO & Aria-Label", "icon": "seo" }
+	],
+	"stack": [
+		{ "id": 1, "text": "Render & State: React" },
+		{ "id": 2, "text": "API: AWS App Sync" },
+		{ "id": 3, "text": "Auth: AWS Cognito" },
+		{ "id": 4, "text": "Code Splitting & SSR: Next" }
+	],
+	"portfolio": [
+		{
+			"id": 1,
+			"name": "Tulis",
+			"stack": ["React", "Material UI", "Firebase"],
+			"img": "/tulis.png",
+			"imgAlt": "Logo tulis",
+			"url": "https://tulis.app"
+		}
+	],
+	"social": [
+		{
+			"id": 1,
+			"social": "linkedin",
+			"url": "https://www.linkedin.com/in/jesus-cova-262882171/",
+			"ariaLabel": "open linkedin personal page"
+		},
+		{
+			"id": 2,
+			"social": "github",
+			"url": "https://github.com/jesuscovam/",
+			"ariaLabel": "open github personal page"
+		},
+		{
+			"id": 3,
+			"social": "instagram",
+			"url": "https://instagram.com/midnightouizard/",
+			"ariaLabel": "open instagram company page"
+		}
+	]
+}
