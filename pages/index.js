@@ -9,7 +9,7 @@ export default function Index({ data }) {
 		<div className='grid grid-cols-1 md:grid-cols-2'>
 			<Hero />
 
-			<Main />
+			<Main {...data}/>
 
 		</div>
 	)
