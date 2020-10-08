@@ -9,12 +9,14 @@ import { VscGithubAlt } from 'react-icons/vsc'
 import { HiOutlineUserAdd } from 'react-icons/hi'
 import { RiLinkedinLine } from 'react-icons/ri'
 import { CgInstagram } from 'react-icons/cg'
+import { SiGraphql, SiNextDotJs, SiReact } from 'react-icons/si'
+import { FaAws } from 'react-icons/fa'
 
-export default function Main({social, chars}) {
+export default function Main({social, chars, stack}) {
   const [nav, setNav] = useState('SERVICES')
   const changeNav = (newVal) => setNav(newVal)
   return(
-    <div className='flex flex-col justify-center items-center p-2 '>
+    <div className='flex flex-col justify-center items-center p-2 my-4 md:my-0'>
       <nav className="flex p-5 px-1 shadow-lg text-indigo-600 font-bold rounded-lg mb-4">
         <ButtonNav text="Services" onClick={() => changeNav('SERVICES')} />
         <ButtonNav text="Stack" onClick={() => changeNav('STACK')} />
@@ -23,6 +25,8 @@ export default function Main({social, chars}) {
 
       <section className='h-full shadow-lg rounded-lg'>
         {nav === 'SERVICES' && <Services social={social} chars={chars} />}
+        {nav === 'STACK' && <Stack stack={stack} />}
+
       </section>
 
     </div>
@@ -96,3 +100,30 @@ const DescriptionChar = ({ text, icon }) => {
 	)
 }
   
+const Stack  = ({ stack }) => {
+  const {props} = useFade()
+	return (
+		<main className="px-16 pt-6">
+			<animated.section style={props} className="w-full px-1">
+			<h1 className="text-center text-gray-800 text-2xl font-bold">Stack</h1>
+
+
+        {stack.map((item) => (
+          <div
+            key={item.id}
+            className="flex items-base my-3 mx-14 p-3 px-3 text-lg text-gray-600 rounded-lg transition duration-300 hover:bg-gray-300 hover:text-gray-500"
+          >
+            {item.id === 1 && <SiReact className="text-indigo-400 text-2xl" />}
+
+            {item.id === 2 && <SiGraphql className="text-indigo-400 text-2xl" />}
+            {item.id === 3 && <FaAws className="text-indigo-400 text-2xl" />}
+            {item.id === 4 && (
+              <SiNextDotJs className="text-indigo-400 text-2xl" />
+            )}
+            <p className="ml-3">{item.text}</p>
+          </div>
+        ))}
+		  </animated.section>
+		</main>
+	)
+}
