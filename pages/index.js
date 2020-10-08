@@ -1,14 +1,16 @@
 
-// import Main from '../src/Main'
+import Main from '../components/main'
 import data from '../src/data.json'
 import { useFade } from '../src/customHooks'
 import { animated } from 'react-spring'
 
 export default function Index({ data }) {
 	return (
-		<div className='flex'>
+		<div className='grid grid-cols-1 md:grid-cols-2'>
 			<Hero />
-			{/* <Main data={data} /> */}
+
+			<Main />
+
 		</div>
 	)
 }
@@ -22,7 +24,7 @@ export function getStaticProps() {
 function Hero() {
 	const { props } = useFade()
 	return (
-		<div className="flex flex-col justify-center items-center w-full md:max-w-xl h-screen bg-indigo-400 text-white">
+		<div className="flex flex-col justify-center items-center w-full md:max-w-xl  h-screen bg-indigo-400 text-white">
 			<animated.div style={props}>
 				<img src="/jcmdevwhite.png" alt="jesus" className="md:ml-48" />
 			</animated.div>
