@@ -19,8 +19,8 @@ export default function Main({social, chars, stack}) {
   const [nav, setNav] = useState('SERVICES')
   const changeNav = (newVal) => setNav(newVal)
   return(
-    <div className='flex flex-col justify-center items-center p-2 my-4 md:my-0'>
-      <nav className="flex p-5 px-16 space-x-5 shadow-lg text-indigo-600 font-bold rounded-lg mb-4">
+    <div className='flex flex-col justify-center w-full items-center p-2 my-4 md:my-0'>
+      <nav className="flex p-5 px-auto space-x-5 shadow-lg text-indigo-600 font-bold rounded-lg mb-4">
         <ButtonNav text="Services" onClick={() => changeNav('SERVICES')} />
         <ButtonNav text="Stack" onClick={() => changeNav('STACK')} />
       </nav>
@@ -38,14 +38,14 @@ export default function Main({social, chars, stack}) {
 const ButtonNav = ({ text, onClick }) => (
 	<div
 		onClick={onClick}
-		className="flex items-center py-3 w-32 mx-2 rounded-lg transition 
+		className="flex items-center py-3 px-3  rounded-lg transition 
 	duration-300 justify-evenly cursor-pointer hover:bg-gray-400 hover:text-white"
 	>
 		{text === 'Services' && <FiMessageSquare />}
 		{text === 'Stack' && <SiJavascript className="ml-2" />}
 
 
-		<h2 className="text-lg">{text}</h2>
+		<h2 className="text-sm md:text-lg ml-2">{text}</h2>
 	</div>
 )
 

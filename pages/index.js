@@ -8,9 +8,14 @@ import {AiOutlineArrowDown} from 'react-icons/ai'
 export default function Index({ data }) {
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-2'>
+
+
 			<Hero />
 
+
+
 			<Main {...data}/>
+
 
 		</div>
 	)
@@ -25,7 +30,7 @@ export function getStaticProps() {
 function Hero() {
 	const { props } = useFade()
 	return (
-		<div className="flex flex-col justify-center items-center w-full md:max-w-xl  h-screen bg-indigo-400 text-white">
+		<div className="grid col-span-1  justify-center items-center  h-screen bg-indigo-400 text-white">
 			<animated.div style={props}>
 				<img src="/jcmdevwhite.png" alt="jesus" className="md:ml-48" />
 			</animated.div>
