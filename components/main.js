@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState} from 'react'
 import { SiJavascript } from 'react-icons/si'
 import { FiFolder, FiMessageSquare } from 'react-icons/fi'
 import { useFade } from '../src/customHooks'
@@ -12,15 +12,17 @@ import { CgInstagram } from 'react-icons/cg'
 import { SiGraphql, SiNextDotJs, SiReact } from 'react-icons/si'
 import { FaAws } from 'react-icons/fa'
 
+//Components
+import {ButtonUpload} from './components'
+
 export default function Main({social, chars, stack}) {
   const [nav, setNav] = useState('SERVICES')
   const changeNav = (newVal) => setNav(newVal)
   return(
     <div className='flex flex-col justify-center items-center p-2 my-4 md:my-0'>
-      <nav className="flex p-5 px-1 shadow-lg text-indigo-600 font-bold rounded-lg mb-4">
+      <nav className="flex p-5 px-16 space-x-5 shadow-lg text-indigo-600 font-bold rounded-lg mb-4">
         <ButtonNav text="Services" onClick={() => changeNav('SERVICES')} />
         <ButtonNav text="Stack" onClick={() => changeNav('STACK')} />
-        <ButtonNav text="Portfolio" onClick={() => changeNav('PORTFOLIO')} />
       </nav>
 
       <section className='h-full shadow-lg rounded-lg'>
@@ -36,12 +38,12 @@ export default function Main({social, chars, stack}) {
 const ButtonNav = ({ text, onClick }) => (
 	<div
 		onClick={onClick}
-		className="flex items-center py-3 w-32 mx-1 rounded-lg transition 
+		className="flex items-center py-3 w-32 mx-2 rounded-lg transition 
 	duration-300 justify-evenly cursor-pointer hover:bg-gray-400 hover:text-white"
 	>
 		{text === 'Services' && <FiMessageSquare />}
 		{text === 'Stack' && <SiJavascript className="ml-2" />}
-		{text === 'Portfolio' && <FiFolder />}
+
 
 		<h2 className="text-lg">{text}</h2>
 	</div>
@@ -123,6 +125,24 @@ const Stack  = ({ stack }) => {
             <p className="ml-3">{item.text}</p>
           </div>
         ))}
+		  </animated.section>
+		</main>
+	)
+}
+
+
+  
+const Components  = () => {
+  const {props} = useFade()
+	return (
+		<main className="px-16 pt-6">
+			<animated.section style={props} className='max-w-2xl'>
+			<h1 className="text-center text-gray-800 text-2xl font-bold">Components</h1>
+
+      <div>
+        <ButtonUpload />
+      </div>
+       
 		  </animated.section>
 		</main>
 	)
